@@ -82,7 +82,9 @@ Selon votre configuration, certains helpers ou entités devront éventuellement 
 Un grand merci à **@djtef** pour le développement de la TOUG et le travail réalisé autour de l'intégration TOUG AquaAir/ESPHome du T.One.
 
 Documentation complémentaire :
+
 https://www.hacf.fr/toug-aldes-t-one/
+
 https://www.hacf.fr/toug-aldes-t-one-partie-2/
 
 
