@@ -32,7 +32,7 @@ Contient les 4 vues suivantes :
 <img width="2134" height="3526" alt="Screenshot_2026-06-08-15-21-24-257_io homeassistant companion android" src="https://github.com/user-attachments/assets/bfad1bff-4607-42e1-8596-4ad837d0828e" />
 
 
-### Dashboards allégés
+### Dashboards allégés à intégrer dans une nouvelle vue et/ou section d'un dashboard existant
 
 - `dashboard_toug_ecs.yaml`
   - Vue dédiée à la gestion de l'Eau Chaude Sanitaire (ECS)
@@ -54,7 +54,7 @@ La procédure de création de ces dashboards ainsi que la mise en place des auto
 
 [👉 TOUG Aldes T.One - Partie 2 : Programmation horaire](https://www.hacf.fr/toug-aldes-t-one-partie-2/#programmation-horaire)
 
-Les fichiers allégés permettent donc d'utiliser uniquement les vues complémentaires que j'ai développées autour de l'intégration TOUG AquaAir.
+Les fichiers allégés permettent donc d'utiliser uniquement les vues complémentaires que j'ai développées autour de l'intégration TOUG AquaAir. Attention ce sont des vues dont le yaml commence par grid: et non pas views:, à intégre dans une nouvelle vue d'un dashboard existant.
 
 ## Prérequis
 
