@@ -9,7 +9,7 @@ Ce dépôt met à disposition mes dashboards Home Assistant pour l'intégration 
 Le dépôt contient :
 
 ### Dashboard complet
-- `dashboard_toug_complet_avec_toutes_les vues.yaml`
+- `dashboard_toug_complet_4_vues.yaml`
 
 Contient les 4 vues suivantes :
 - Températures extérieure - Thermostats
