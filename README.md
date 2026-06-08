@@ -54,7 +54,7 @@ La procédure de création de ces dashboards ainsi que la mise en place des auto
 
 [👉 TOUG Aldes T.One - Partie 2 : Programmation horaire](https://www.hacf.fr/toug-aldes-t-one-partie-2/#programmation-horaire)
 
-Les fichiers allégés permettent donc d'utiliser uniquement les vues complémentaires que j'ai développées autour de l'intégration TOUG AquaAir. Attention ce sont des vues dont le yaml commence par grid: et non pas views:, à intégre dans une nouvelle vue d'un dashboard existant.
+Les fichiers allégés permettent donc d'utiliser uniquement les vues complémentaires que j'ai développées autour de l'intégration TOUG AquaAir. ATTENTION ce sont des vues dont le yaml commence par "type: grid" et non pas par "views:", à intégrer donc dans une nouvelle vue d'un dashboard existant.
 
 ## Prérequis
 
