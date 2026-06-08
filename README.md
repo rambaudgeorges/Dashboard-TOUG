@@ -14,12 +14,12 @@ Le dépôt contient :
 Contient les 4 vues suivantes :
 - Températures extérieure - Thermostats
 
-<img width="2136" height="3200" alt="Screenshot_2026-06-07-21-54-52-613_io homeassistant companion android" src="https://github.com/user-attachments/assets/86f749e7-e351-449c-b334-66585c0d987b" />
+<img width="2136" height="3200" alt="Screenshot_2026-06-08-18-38-56-384_io homeassistant companion android" src="https://github.com/user-attachments/assets/fe714d2b-b489-4183-8b50-67ac47bbe1a4" />
 
   
 - Configuration et contôles ECS
 
-<img width="2136" height="3200" alt="Screenshot_2026-06-07-21-55-08-466_io homeassistant companion android" src="https://github.com/user-attachments/assets/9d6a3438-d789-411a-b09d-c578d7e6d17e" />
+<img width="2136" height="3200" alt="Screenshot_2026-06-08-19-02-47-376_io homeassistant companion android" src="https://github.com/user-attachments/assets/07788e2e-8b35-4645-b8f2-bcd7147f3442" />
 
   
 - Programmation horaire chauffage climatisation
@@ -29,7 +29,7 @@ Contient les 4 vues suivantes :
 
 - Configuration T.One - contrôles Chauffage et Climatisation
 
-<img width="2134" height="3526" alt="Screenshot_2026-06-08-15-21-24-257_io homeassistant companion android" src="https://github.com/user-attachments/assets/bfad1bff-4607-42e1-8596-4ad837d0828e" />
+<img width="2136" height="3536" alt="Screenshot_2026-06-08-18-55-42-823_io homeassistant companion android" src="https://github.com/user-attachments/assets/7153c1ee-27f1-4ecb-b4b3-564933a31552" />
 
 
 ### Dashboards allégés à intégrer dans une nouvelle vue et/ou section d'un dashboard existant
