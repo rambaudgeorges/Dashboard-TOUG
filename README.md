@@ -29,7 +29,7 @@ Contient les 4 vues suivantes :
 
 - Configuration T.One - contrôles Chauffage et Climatisation
 
-<img width="2136" height="3536" alt="Screenshot_2026-06-08-18-55-42-823_io homeassistant companion android" src="https://github.com/user-attachments/assets/7153c1ee-27f1-4ecb-b4b3-564933a31552" />
+<img width="2136" height="3200" alt="Screenshot_2026-06-08-20-07-18-298_io homeassistant companion android" src="https://github.com/user-attachments/assets/ee24f65f-3026-4b49-a926-4337ac47edeb" />
 
 
 ### Dashboards allégés à intégrer dans une nouvelle vue et/ou section d'un dashboard existant
