@@ -1,0 +1,887 @@
+type: grid
+cards:
+  - type: custom:bubble-card
+    card_type: separator
+    name: Capteurs Chauffage Clim
+    icon: mdi:eye-outline
+    grid_options:
+      columns: 12
+      rows: 0.7
+    styles: ""
+    card_layout: large-2-rows
+    sub_button:
+      main: []
+      bottom: []
+  - type: horizontal-stack
+    cards:
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Chauffage
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 32px 0 0 32px !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_conso_chauffage
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Chauf appoint
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_conso_chauffage_appoint
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Coût Chauffage
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 0 32px 32px 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_cout_chauffage
+    grid_options:
+      columns: 12
+      rows: 1
+  - type: horizontal-stack
+    cards:
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Climatisation
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 32px 0 0 32px !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_conso_rafraichissement
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Coût Climatisation
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 0 32px 32px 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_cout_rafraichissement
+    grid_options:
+      columns: 12
+      rows: 1
+  - type: horizontal-stack
+    cards:
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: ECS
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 32px 0 0 32px !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_conso_eau_chaude
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: ECS appoint
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_conso_eau_chaude_appoint
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Coût ECS
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 0 32px 32px 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_cout_eau_chaude
+    grid_options:
+      columns: 12
+      rows: 1
+  - type: custom:bubble-card
+    card_type: button
+    button_type: state
+    animated_icons: true
+    entity: sensor.b_pac_power
+    styles: |-
+      :host {
+          --color-ok: #bf8d1a;
+          --color-background: var(--bubble-button-main-background-color, var(--bubble-main-background-color, var(--background-color-2, var(--secondary-background-color))));
+          --color-notification-bubble: --color-notification-bubble: #FFFACD;
+          --color-bar: var(--color-ok);
+          /* Calcul de la progress % prod max de 1500 W) */
+          --progress: ${Math.round((Number(state) < 1500 ? Number(state) : 1500) / 1500 * 100)}%;
+        }
+      .bubble-button-card-container {
+        background: var(--color-background) !important;
+        position: relative;
+      }
+
+      /* Barre de progression qui évolue en fonction de la prod */
+      .bubble-button-card-container::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: var(--progress) !important;
+        background: var(--color-bar) !important;
+        z-index: 0;
+      }
+      .bubble-icon {
+        color: #bf8d1a !important;
+      }
+    name: PAC + appoint
+    icon: mdi:air-conditioner
+    sub_button:
+      main:
+        - entity: sensor.b_pac_power
+          show_state: true
+          show_icon: false
+          state_background: false
+          show_name: true
+      bottom: []
+    card_layout: large
+    grid_options:
+      columns: 12
+    show_state: false
+    scrolling_effect: false
+  - type: horizontal-stack
+    cards:
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: true
+        card_layout: large
+        icon: ""
+        name: Pres stat cible
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 32px 0 0 32px !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_pression_statique_cible
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: V. air cible
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_vitesse_air_cible
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Déb air cible
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_debit_air_cible
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: true
+        card_layout: large
+        icon: ""
+        name: Ventilateur UI
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 0 32px 32px 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_vitesse_ventilateur_ui
+    grid_options:
+      columns: 12
+      rows: 1
+  - type: custom:bubble-card
+    card_type: separator
+    name: Configuration T.One AquaAir
+    icon: mdi:cog-outline
+    grid_options:
+      columns: 12
+      rows: 0.7
+    styles: ""
+    card_layout: large-2-rows
+    sub_button:
+      main: []
+      bottom: []
+  - type: horizontal-stack
+    cards:
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: true
+        scrolling_effect: false
+        card_layout: large
+        icon: mdi:currency-eur
+        name: HP
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 32px 0 0 32px !important;
+          }
+          .bubble-icon {
+            color: #00cc00 !important;
+            opacity: 1 !important;
+            }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: number.toug_aquaair_tarif_hp
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: true
+        scrolling_effect: false
+        card_layout: large
+        icon: mdi:currency-eur
+        name: HC
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+          .bubble-icon {
+            color: #00cc00 !important;
+            opacity: 1 !important;
+            }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: number.toug_aquaair_tarif_hc
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: true
+        scrolling_effect: false
+        card_layout: large
+        icon: mdi:hazard-lights
+        name: Reset kWh
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 0 32px 32px 0 !important;
+          }
+          .bubble-icon {
+            color: #ff0000 !important;
+            opacity: 1 !important;
+            }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: button.toug_aquaair_reset_consommation
+    grid_options:
+      columns: 12
+      rows: 1
+  - type: custom:bubble-card
+    card_type: button
+    force_icon: false
+    show_state: true
+    show_last_changed: false
+    icon: mdi:calendar
+    name: Réglage date heure UTC
+    grid_options:
+      columns: 6
+      rows: 1
+    styles: |-
+      .bubble-icon {
+        color: #bf8d1a !important;
+        opacity: 1 !important;
+        }
+    entity: datetime.toug_aquaair_reglage_date_heure
+    scrolling_effect: true
+    sub_button:
+      main: []
+      bottom: []
+    button_type: state
+    rows: 1
+    event_action:
+      tap_action:
+        action: more-info
+      double_tap_action:
+        action: none
+      hold_action:
+        action: none
+  - type: custom:bubble-card
+    card_type: select
+    button_type: state
+    styles: ":host {\n   .bubble-icon {\n  color: \t#79a471 !important;\n}"
+    grid_options:
+      columns: 6
+      rows: 1
+    sub_button:
+      main: []
+      bottom: []
+    entity: select.toug_aquaair_devise
+    min_value: 0
+    max_value: 2400
+    step: 50
+    read_only_slider: false
+    relative_slide: true
+    name: Devise
+    show_attribute: false
+    show_last_updated: false
+    show_last_changed: false
+    show_state: true
+    force_icon: false
+    show_icon: true
+    scrolling_effect: false
+    icon: mdi:cash-multiple
+    show_name: true
+    slider_live_update: true
+  - type: custom:bubble-card
+    card_type: button
+    force_icon: false
+    show_state: true
+    show_last_changed: false
+    icon: mdi:calendar
+    name: Début vacances
+    grid_options:
+      columns: 6
+      rows: 1
+    styles: |-
+      .bubble-icon {
+        color: #00cc00 !important;
+        opacity: 1 !important;
+        }
+    entity: datetime.toug_aquaair_vacances_debut
+    scrolling_effect: true
+    sub_button:
+      main: []
+      bottom: []
+    button_type: state
+    rows: 1
+    event_action:
+      tap_action:
+        action: more-info
+      double_tap_action:
+        action: none
+      hold_action:
+        action: none
+  - type: custom:bubble-card
+    card_type: button
+    force_icon: false
+    show_state: true
+    show_last_changed: false
+    icon: mdi:calendar
+    name: Fin vacances
+    grid_options:
+      columns: 6
+      rows: 1
+    styles: |-
+      .bubble-icon {
+        color: #00cc00 !important;
+        opacity: 1 !important;
+        }
+    entity: datetime.toug_aquaair_vacances_fin
+    scrolling_effect: true
+    sub_button:
+      main: []
+      bottom: []
+    button_type: state
+    rows: 1
+    event_action:
+      tap_action:
+        action: more-info
+      double_tap_action:
+        action: none
+      hold_action:
+        action: none
+  - type: custom:bubble-card
+    card_type: separator
+    name: Commandes  Chauffage Clim
+    icon: mdi:tune-variant
+    rows: 1
+    grid_options:
+      columns: 12
+      rows: 0.7
+    card_layout: large-2-rows
+    sub_button:
+      main: []
+      bottom: []
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    styles: |
+      :host {
+         .bubble-icon {
+        color: #3399ff !important;
+      }
+    name: Vacances
+    grid_options:
+      columns: 6
+      rows: 1
+    show_state: false
+    slider_live_update: true
+    entity: switch.toug_aquaair_vacances
+    icon: mdi:beach
+    read_only_slider: false
+    tap_to_slide: false
+    relative_slide: true
+    step: 50
+    max_value: 2400
+    min_value: 0
+    scrolling_effect: false
+    show_icon: true
+    sub_button:
+      main: []
+      bottom: []
+    button_action: {}
+  - type: custom:bubble-card
+    card_type: button
+    button_type: switch
+    styles: |-
+      :host {
+         .bubble-icon {
+        color: #0066cc !important;
+      }
+    name: Hors gel
+    grid_options:
+      columns: 6
+      rows: 1
+    show_state: false
+    slider_live_update: true
+    entity: switch.toug_aquaair_hors_gel
+    icon: mdi:snowflake
+    scrolling_effect: false
+    show_last_changed: false
+    relative_slide: true
+    min_value: 0
+    max_value: 2400
+    step: 50
+    sub_button:
+      main: []
+      bottom: []
+  - type: custom:bubble-card
+    card_type: select
+    force_icon: false
+    show_state: false
+    show_last_changed: false
+    icon: mdi:air-conditioner
+    name: Mode air
+    grid_options:
+      columns: full
+      rows: 1
+    styles: |-
+      :host {
+         .bubble-icon {
+        color: #bf8d1a !important;
+        opacity: 1 !important;
+      }
+    scrolling_effect: true
+    entity: select.toug_aquaair_mode_air
+    sub_button:
+      main:
+        - entity: select.toug_aquaair_mode_air
+          sub_button_type: default
+          show_state: true
+          show_icon: false
+      bottom: []
+  - type: custom:bubble-card
+    card_type: climate
+    force_icon: false
+    show_state: true
+    show_last_changed: false
+    icon: mdi:thermometer
+    name: Salon
+    grid_options:
+      columns: full
+      rows: 1
+    styles: |-
+      .bubble-icon {
+        color: #bf8d1a !important;
+        opacity: 1 !important;
+        }
+    scrolling_effect: false
+    entity: climate.salon_2
+    sub_button:
+      main:
+        - name: HVAC modes menu
+          select_attribute: hvac_modes
+          state_background: false
+          show_arrow: false
+          sub_button_type: select
+      bottom: []
+    show_icon: true
+  - type: custom:bubble-card
+    card_type: climate
+    force_icon: false
+    show_state: true
+    show_last_changed: false
+    icon: mdi:thermometer
+    name: Chambre invités
+    grid_options:
+      columns: full
+      rows: 1
+    styles: |-
+      .bubble-icon {
+        color: #bf8d1a !important;
+        opacity: 1 !important;
+        }
+    scrolling_effect: true
+    entity: climate.chambre_invites
+    show_icon: true
+    sub_button:
+      main:
+        - name: HVAC modes menu
+          select_attribute: hvac_modes
+          state_background: false
+          show_arrow: false
+          sub_button_type: select
+      bottom: []
+  - type: custom:bubble-card
+    card_type: climate
+    force_icon: false
+    show_state: true
+    show_last_changed: false
+    icon: mdi:thermometer
+    name: Bureau
+    grid_options:
+      columns: full
+      rows: 1
+    styles: |-
+      .bubble-icon {
+        color: #bf8d1a !important;
+        opacity: 1 !important;
+        }
+    scrolling_effect: true
+    entity: climate.bureau
+    sub_button:
+      main:
+        - name: HVAC modes menu
+          select_attribute: hvac_modes
+          state_background: false
+          show_arrow: false
+          sub_button_type: select
+      bottom: []
+  - type: custom:bubble-card
+    card_type: climate
+    button_type: slider
+    styles: |-
+      .bubble-range-fill { 
+        background: #85a210 !important;
+        opacity: 1 !important;
+      }
+      .bubble-icon {
+        color: #bf8d1a !important;
+        opacity: 1 !important;
+      }
+    show_icon: true
+    show_last_changed: false
+    show_attribute: false
+    force_icon: false
+    show_state: true
+    slider_live_update: false
+    icon: mdi:thermometer
+    name: Chambre Georges
+    grid_options:
+      columns: full
+      rows: 1
+    entity: climate.chambre_georges
+    scrolling_effect: false
+    sub_button:
+      main:
+        - name: HVAC modes menu
+          select_attribute: hvac_modes
+          state_background: false
+          show_arrow: false
+          sub_button_type: select
+      bottom: []
+  - type: custom:bubble-card
+    card_type: separator
+    name: Diagnostic T.One AquaAir
+    icon: mdi:gauge-low
+    rows: 1
+    grid_options:
+      columns: 12
+      rows: 0.7
+    card_layout: large-2-rows
+    sub_button:
+      main: []
+      bottom: []
+  - type: horizontal-stack
+    cards:
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Défaut PAC
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 32px 0 0 32px !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_defaut_unite_exterieure
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Défauts
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_defauts
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Etat du filtre
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 0 32px 32px 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_etat_filtre
+    grid_options:
+      columns: 12
+      rows: 1
+  - type: custom:bubble-card
+    card_type: select
+    force_icon: false
+    show_state: true
+    show_last_changed: false
+    icon: mdi:tools
+    name: Test
+    grid_options:
+      columns: 6
+      rows: 1
+    styles: |-
+      :host {
+         .bubble-icon {
+        color: #bf8d1a !important;
+        opacity: 1 !important;
+      }
+    scrolling_effect: true
+    entity: select.toug_aquaair_test
+    sub_button:
+      main: []
+      bottom: []
+  - type: custom:bubble-card
+    card_type: button
+    button_type: state
+    styles: |-
+      .bubble-range-fill { 
+        background: #85a210 !important;
+        opacity: 1 !important;
+      }
+      .bubble-icon {
+        color: #bf8d1a !important;
+        opacity: 1 !important;
+      }
+    show_icon: true
+    show_last_changed: false
+    show_attribute: false
+    force_icon: false
+    show_state: false
+    slider_live_update: false
+    icon: mdi:restart
+    name: Redémarrer T.One
+    grid_options:
+      columns: 6
+      rows: 1
+    entity: button.toug_aquaair_toug_aquaair_restart
+    scrolling_effect: false
+    sub_button:
+      main: []
+      bottom: []
