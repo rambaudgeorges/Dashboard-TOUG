@@ -45,7 +45,7 @@ Contient les 4 vues suivantes :
  
 Il est intégré dans ces deux vues des entités de consommations et de coûts issues directement du T.One sans compteurs de services ni modèles de capteurs. 
 Ces consommations ne sont pas annuelles, elles sont cumulatives et réinitialisées uniquement lors de certaines maintenances, notamment lors de la mise à jour du micrologiciel.
-Mais vous avez la possibilité d'utiliser l'entié "Reset Consommation" dans un automatisme pour réinitialiser ces données tous les ans le 1er janvier à 00:00:00
+Mais vous avez la possibilité d'utiliser l'entié "Reset Consommation" dans un automatisme pour réinitialiser ces données tous les ans le 1er janvier à 00:00:00, ou manuellement avec le bouton dédié du dashboard.
    
 ## Pourquoi plusieurs fichiers ?
 
