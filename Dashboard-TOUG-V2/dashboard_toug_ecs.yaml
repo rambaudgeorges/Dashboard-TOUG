@@ -1,0 +1,402 @@
+type: grid
+cards:
+  - show_current: true
+    show_forecast: true
+    type: weather-forecast
+    entity: weather.eyguieres
+    forecast_type: daily
+  - type: custom:bubble-card
+    card_type: separator
+    name: Commandes ECS
+    icon: mdi:tune-variant
+    rows: 1
+    grid_options:
+      columns: 12
+      rows: 0.7
+    card_layout: large-2-rows
+    sub_button:
+      main: []
+      bottom: []
+  - type: custom:bubble-card
+    card_type: select
+    force_icon: false
+    show_state: true
+    show_last_changed: false
+    icon: mdi:air-conditioner
+    name: Mode ECS
+    grid_options:
+      columns: 6
+      rows: 1
+    styles: |-
+      :host {
+         .bubble-icon {
+        color: #bf8d1a !important;
+        opacity: 1 !important;
+      }
+    scrolling_effect: true
+    entity: select.toug_aquaair_mode_ecs
+    sub_button:
+      main: []
+      bottom: []
+  - type: custom:bubble-card
+    card_type: button
+    button_type: state
+    styles: |-
+      .bubble-range-fill { 
+        background: #85a210 !important;
+        opacity: 1 !important;
+      }
+      .bubble-icon {
+        color: #ff0000 !important;
+        opacity: 1 !important;
+        }
+    show_icon: true
+    show_last_changed: false
+    show_attribute: false
+    force_icon: false
+    show_state: true
+    slider_live_update: false
+    icon: mdi:hazard-lights
+    name: Reset kWh
+    grid_options:
+      columns: 6
+      rows: 1
+    entity: button.toug_aquaair_reset_consommation
+    scrolling_effect: false
+    sub_button:
+      main: []
+      bottom: []
+  - type: custom:bubble-card
+    card_type: separator
+    name: Capteurs ECS
+    icon: mdi:eye-outline
+    grid_options:
+      columns: 12
+      rows: 0.7
+    styles: ""
+    card_layout: large-2-rows
+    sub_button:
+      main: []
+      bottom: []
+  - type: custom:bubble-card
+    card_type: button
+    button_type: state
+    animated_icons: true
+    entity: sensor.b_pac_power
+    styles: |-
+      :host {
+          --color-ok: #bf8d1a;
+          --color-background: var(--bubble-button-main-background-color, var(--bubble-main-background-color, var(--background-color-2, var(--secondary-background-color))));
+          --color-notification-bubble: --color-notification-bubble: #FFFACD;
+          --color-bar: var(--color-ok);
+          /* Calcul de la progress % prod max de 1500 W) */
+          --progress: ${Math.round((Number(state) < 1500 ? Number(state) : 1500) / 1500 * 100)}%;
+        }
+      .bubble-button-card-container {
+        background: var(--color-background) !important;
+        position: relative;
+      }
+
+      /* Barre de progression qui évolue en fonction de la prod */
+      .bubble-button-card-container::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: var(--progress) !important;
+        background: var(--color-bar) !important;
+        z-index: 0;
+      }
+      .bubble-icon {
+        color: #bf8d1a !important;
+      }
+    name: PAC + App ECS Chauf Clim
+    icon: mdi:air-conditioner
+    sub_button:
+      main:
+        - entity: sensor.b_pac_power
+          show_state: true
+          show_icon: false
+          state_background: false
+          show_name: true
+      bottom: []
+    card_layout: large
+    grid_options:
+      columns: 12
+    show_state: false
+    scrolling_effect: false
+  - type: horizontal-stack
+    cards:
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: true
+        card_layout: large
+        icon: ""
+        name: Consigne ECS
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 32px 0 0 32px !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_consigne_ecs_telecommande
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: true
+        card_layout: large
+        icon: ""
+        name: ECS tout élec
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: binary_sensor.toug_aquaair_ecs_tout_electrique
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: true
+        card_layout: large
+        icon: ""
+        name: Echangeur EC
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_echangeur_eau_chaude
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: true
+        card_layout: large
+        icon: ""
+        name: ECS %
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 0 32px 32px 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_pourcentage_ecs
+    grid_options:
+      columns: 12
+      rows: 1
+  - type: horizontal-stack
+    cards:
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: true
+        card_layout: large
+        icon: ""
+        name: T° ECS
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 32px 0 0 32px !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_temperature_ecs
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: true
+        card_layout: large
+        icon: ""
+        name: Sonde ECS bas
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_sonde_ecs_bas
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: true
+        card_layout: large
+        icon: ""
+        name: Sonde ECS haut
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_sonde_ecs_haut
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: false
+        scrolling_effect: false
+        card_layout: large
+        icon: ""
+        name: Vol ECS
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 0 32px 32px 0 !important;
+          }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: sensor.toug_aquaair_volume_restant_ecs
+    grid_options:
+      columns: 12
+      rows: 1
+  - type: custom:bubble-card
+    card_type: separator
+    name: Configuration ECS
+    icon: mdi:cog-outline
+    grid_options:
+      columns: 12
+      rows: 0.7
+    styles: ""
+    card_layout: large-2-rows
+    sub_button:
+      main: []
+      bottom: []
+  - type: horizontal-stack
+    cards:
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: true
+        scrolling_effect: false
+        card_layout: large
+        icon: mdi:account-group
+        name: Foyer
+        button_type: state
+        styles: ".bubble-button-card-container {\n  border-radius: 32px 0 0 32px !important;\n}\n.bubble-icon {\n  color: \t#DEB887 !important;\n  opacity: 1 !important;\n  }"
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: number.toug_aquaair_composition_foyer
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: true
+        scrolling_effect: true
+        card_layout: large
+        icon: mdi:coolant-temperature
+        name: Consigne ECS
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+          .bubble-icon {
+            color: #0066ff !important;
+            opacity: 1 !important;
+            }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: number.toug_aquaair_consigne_ecs
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: true
+        scrolling_effect: true
+        card_layout: large
+        icon: mdi:history
+        name: Reset anode
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 0 32px 32px 0 !important;
+          }
+          .bubble-icon {
+            color: #ff0000 !important;
+            opacity: 1 !important;
+            }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: button.toug_aquaair_reset_anode
+    grid_options:
+      columns: 12
+      rows: 1
