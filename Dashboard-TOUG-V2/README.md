@@ -2,7 +2,7 @@
 
 Après utilisation du dashboard-TOUG-V1, j'ai un peu réorganisé les entités pour que ce soit plus convivial. Par contre il est un peu plus long à mettre en place, notamment en ce qui concerne la vue Consommations et coûts qui nécessite de créer en mode UI 18 Entrées dont 12 compteurs de services et 6 capteurs template. 
 J'ai fait ce choix car les entités de consommations ne sont pas réinitialisées tous les ans mais seulement lors de certaines maintenances comme lors de la mise à jour du Firmware.
-L'entité "Reset Consommation" permet par contre de réinitialiser tous les ans les consommations si vous le souhaitez, avec un automatisme bien sûr.
+L'entité "Reset Consommation" permet par contre de réinitialiser tous les ans les consommations si vous le souhaitez, avec un automatisme ou manuellement.
 Ce dépôt du Dashboard TOUG-V2 comprend 5 vues : un fichier complet avec les 5 vues, et 3 fichiers plus light avec uniquement soit la vue T.One-Chauffage-Climatisation, soit la vue ECS, soit la vue Consommations et coûts
 
 # Dashboard TOUG AquaAir pour Home Assistant
