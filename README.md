@@ -1,5 +1,7 @@
-# Dashboard-TOUG
-Dépôt du Dashboard TOUG comprenant 4 vues : un fichier complet avec les 4 vues, et 2 fichiers plus light avec uniquement soit la vue ECS, soit la vue T.One-Chauffage-Climatisation
+# Dashboard-TOUG-V1
+
+Ce dépôt du Dashboard-TOUG-V1 comprend 4 vues : un fichier complet avec les 4 vues, et 2 fichiers plus light avec uniquement soit la vue ECS, soit la vue T.One-Chauffage-Climatisation
+
 # Dashboard TOUG AquaAir pour Home Assistant
 
 Ce dépôt met à disposition mes dashboards Home Assistant pour l'intégration **TOUG AquaAir/ESPHome** développée par @djtef.
@@ -9,6 +11,7 @@ Ce dépôt met à disposition mes dashboards Home Assistant pour l'intégration 
 Le dépôt contient :
 
 ### Dashboard complet
+
 - `dashboard_toug_complet_4_vues.yaml`
 
 Contient les 4 vues suivantes :
@@ -39,6 +42,10 @@ Contient les 4 vues suivantes :
 
 - `dashboard_toug_T.One_chauffage_climatisation.yaml`
   - Vue dédiée à la configuration générale du T.One, au chauffage et à la climatisation
+ 
+Il est intégré dans ces deux vues des entités de consommations et de coûts issues directement du T.One sans compteurs de services ni modèles de capteurs. 
+Ces consommations ne sont pas annuelles, elles sont cumulatives et réinitialisées uniquement lors de certaines maintenances, notamment lors de la mise à jour du micrologiciel.
+Mais vous avez la possibilité d'utiliser l'entié "Reset Consommation" dans un automatisme pour réinitialiser ces données tous les ans le 1er janvier à 00:00:00
    
 ## Pourquoi plusieurs fichiers ?
 
