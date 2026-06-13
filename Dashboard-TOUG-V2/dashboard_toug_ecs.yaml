@@ -25,7 +25,6 @@ cards:
     icon: mdi:air-conditioner
     name: Mode ECS
     grid_options:
-      columns: 6
       rows: 1
     styles: |-
       :host {
@@ -36,35 +35,16 @@ cards:
     scrolling_effect: true
     entity: select.toug_aquaair_mode_ecs
     sub_button:
-      main: []
-      bottom: []
-  - type: custom:bubble-card
-    card_type: button
-    button_type: state
-    styles: |-
-      .bubble-range-fill { 
-        background: #85a210 !important;
-        opacity: 1 !important;
-      }
-      .bubble-icon {
-        color: #ff0000 !important;
-        opacity: 1 !important;
-        }
-    show_icon: true
-    show_last_changed: false
-    show_attribute: false
-    force_icon: false
-    show_state: true
-    slider_live_update: false
-    icon: mdi:hazard-lights
-    name: Reset kWh
-    grid_options:
-      columns: 6
-      rows: 1
-    entity: button.toug_aquaair_reset_consommation
-    scrolling_effect: false
-    sub_button:
-      main: []
+      main:
+        - entity: sensor.toug_aquaair_temperature_exterieure_exterieur_thoa
+          sub_button_type: default
+          show_arrow: false
+          show_state: true
+          icon: mdi:thermometer
+          name: T° ext
+          show_name: true
+          scrolling_effect: false
+          show_background: false
       bottom: []
   - type: custom:bubble-card
     card_type: separator
@@ -111,7 +91,7 @@ cards:
       .bubble-icon {
         color: #bf8d1a !important;
       }
-    name: PAC + App ECS Chauf Clim
+    name: PAC + Appoint ECS Chauf Clim
     icon: mdi:air-conditioner
     sub_button:
       main:
@@ -140,7 +120,7 @@ cards:
         scrolling_effect: true
         card_layout: large
         icon: ""
-        name: Consigne ECS
+        name: Consigne ECS nuit
         button_type: state
         styles: |-
           .bubble-button-card-container {
@@ -255,7 +235,7 @@ cards:
         scrolling_effect: true
         card_layout: large
         icon: ""
-        name: Sonde ECS bas
+        name: Sonde ECS basse
         button_type: state
         styles: |-
           .bubble-button-card-container {
@@ -277,7 +257,7 @@ cards:
         scrolling_effect: true
         card_layout: large
         icon: ""
-        name: Sonde ECS haut
+        name: Sonde ECS haute
         button_type: state
         styles: |-
           .bubble-button-card-container {
@@ -357,7 +337,7 @@ cards:
         scrolling_effect: true
         card_layout: large
         icon: mdi:coolant-temperature
-        name: Consigne ECS
+        name: Consigne ECS relance
         button_type: state
         styles: |-
           .bubble-button-card-container {
