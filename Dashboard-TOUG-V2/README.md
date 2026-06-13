@@ -25,6 +25,7 @@ Contient les 5 vues suivantes :
 Ici on voit bien que les chambres ont dépassé la température de consigne (26°) en climatisation  et que les bouches se sont fermées (couleur gris foncé) lorsque la température a atteint 25,6°. J'aime bien les cartes Bubble Card pour les thermostats, car elles donnent parfaitement leurs états ainsi que celui de leurs bouches associées. Par exemple en mode Air Ventilation il apparaît l'icône d'un ventilateur, ainsi qu'au début et à la fin du cycle de climatisation.
 
 
+
 - Configuration et contôles ECS
 
 <img width="2136" height="3200" alt="Screenshot_2026-06-13-12-11-21-510_io homeassistant companion android" src="https://github.com/user-attachments/assets/5f782d44-19e3-4fa6-9dff-8e42b5b5fa1a" />
