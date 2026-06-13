@@ -20,8 +20,9 @@ Contient les 5 vues suivantes :
 
 - Configuration T.One - contrôles Chauffage et Climatisation
 
-<img width="2136" height="3200" alt="Screenshot_2026-06-13-12-11-06-800_io homeassistant companion android" src="https://github.com/user-attachments/assets/98a5bf55-699d-4cf2-ae96-b1a18f4cf396" />
+<img width="2136" height="3200" alt="Screenshot_2026-06-13-17-24-19-746_io homeassistant companion android" src="https://github.com/user-attachments/assets/2ebb61b5-3e86-4fed-98c2-4b4f3d9fdf8d" />
 
+Ici on voit bien que les chambres ont dépassé la température de consigne (26°) en climatisation  et que les bouches se sont fermées (couleur gris foncé) lorsque la température a atteint 25,6°. J'aime bien les cartes Bubble Card pour thermostats car elles reflètent parfaitement leur état ainsi que celui de la bouche associée. Par exemple en mode ventilation il apparaît l'icône d'un ventilateur au lieu de celui du froid (en Mode Air Ventilation, ou au début et à la fin du cycle de climatisation).
 
 
 - Configuration et contôles ECS
