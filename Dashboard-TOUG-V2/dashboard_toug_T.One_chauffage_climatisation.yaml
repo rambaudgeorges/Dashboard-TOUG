@@ -15,7 +15,7 @@ cards:
   - type: custom:bubble-card
     card_type: select
     force_icon: false
-    show_state: false
+    show_state: true
     show_last_changed: false
     icon: mdi:air-conditioner
     name: Mode air
@@ -32,31 +32,28 @@ cards:
     entity: select.toug_aquaair_mode_air
     sub_button:
       main:
+        - entity: sensor.toug_aquaair_temperature_exterieure_exterieur_thoa
+          sub_button_type: select
+          show_icon: false
+          show_state: true
+          name: Ext
+          scrolling_effect: false
+          show_name: true
+          show_arrow: false
+          state_background: false
+          show_background: false
         - entity: sensor.toug_aquaair_temperature_piece_principale
           sub_button_type: default
           show_state: true
-          show_icon: false
-          show_name: true
-          name: Pièce principale
-          show_background: true
-          state_background: true
-        - entity: select.toug_aquaair_mode_air
-          sub_button_type: select
-          scrolling_effect: true
-          show_background: true
-          state_background: true
-          show_icon: false
-          force_icon: false
+          show_icon: true
           show_name: false
-          show_state: true
-          show_last_changed: false
-          show_last_updated: false
-          show_attribute: false
-          show_arrow: false
+          show_background: true
+          state_background: true
       bottom: []
     show_name: true
     show_attribute: false
     show_last_updated: false
+    attribute: friendly_name
   - type: custom:bubble-card
     card_type: climate
     force_icon: false
@@ -223,7 +220,7 @@ cards:
       .bubble-icon {
         color: #bf8d1a !important;
       }
-    name: PAC + App ECS Chauf Clim
+    name: PAC + Appoint ECS Chauf Clim
     icon: mdi:air-conditioner
     sub_button:
       main:
@@ -343,100 +340,19 @@ cards:
     sub_button:
       main: []
       bottom: []
-  - type: horizontal-stack
-    cards:
-      - type: custom:bubble-card
-        show_state: true
-        show_attribute: false
-        show_last_changed: false
-        force_icon: false
-        sub_button:
-          main: []
-          bottom: []
-        show_icon: true
-        scrolling_effect: false
-        card_layout: large
-        icon: mdi:currency-eur
-        name: HP
-        button_type: state
-        styles: |-
-          .bubble-button-card-container {
-            border-radius: 32px 0 0 32px !important;
-          }
-          .bubble-icon {
-            color: #00cc00 !important;
-            opacity: 1 !important;
-            }
-        attribute: friendly_name
-        show_name: true
-        card_type: button
-        entity: number.toug_aquaair_tarif_hp
-      - type: custom:bubble-card
-        show_state: true
-        show_attribute: false
-        show_last_changed: false
-        force_icon: false
-        sub_button:
-          main: []
-          bottom: []
-        show_icon: true
-        scrolling_effect: false
-        card_layout: large
-        icon: mdi:currency-eur
-        name: HC
-        button_type: state
-        styles: |-
-          .bubble-button-card-container {
-              border-radius: 0 0 0 0 !important;
-          }
-          .bubble-icon {
-            color: #00cc00 !important;
-            opacity: 1 !important;
-            }
-        attribute: friendly_name
-        show_name: true
-        card_type: button
-        entity: number.toug_aquaair_tarif_hc
-      - type: custom:bubble-card
-        show_state: true
-        show_attribute: false
-        show_last_changed: false
-        force_icon: false
-        sub_button:
-          main: []
-          bottom: []
-        show_icon: true
-        scrolling_effect: false
-        card_layout: large
-        icon: mdi:hazard-lights
-        name: Reset kWh
-        button_type: state
-        styles: |-
-          .bubble-button-card-container {
-            border-radius: 0 32px 32px 0 !important;
-          }
-          .bubble-icon {
-            color: #ff0000 !important;
-            opacity: 1 !important;
-            }
-        attribute: friendly_name
-        show_name: true
-        card_type: button
-        entity: button.toug_aquaair_reset_consommation
-    grid_options:
-      columns: 12
-      rows: 1
   - type: custom:bubble-card
     card_type: button
     force_icon: false
     show_state: true
     show_last_changed: false
     icon: mdi:calendar
-    name: Réglage date heure UTC
+    name: >-
+      Date / Heure en UTC (saisir -1h en hiv ou -2h en été à l'heure locale =>
+      ESPHome actualise en UTC+1 ou UTC+2)
     grid_options:
-      columns: 6
+      columns: 12
       rows: 1
-    styles: |-
+    styles: |
       .bubble-icon {
         color: #bf8d1a !important;
         opacity: 1 !important;
@@ -455,33 +371,6 @@ cards:
         action: none
       hold_action:
         action: none
-  - type: custom:bubble-card
-    card_type: select
-    button_type: state
-    styles: ":host {\n   .bubble-icon {\n  color: \t#79a471 !important;\n}"
-    grid_options:
-      columns: 6
-      rows: 1
-    sub_button:
-      main: []
-      bottom: []
-    entity: select.toug_aquaair_devise
-    min_value: 0
-    max_value: 2400
-    step: 50
-    read_only_slider: false
-    relative_slide: true
-    name: Devise
-    show_attribute: false
-    show_last_updated: false
-    show_last_changed: false
-    show_state: true
-    force_icon: false
-    show_icon: true
-    scrolling_effect: false
-    icon: mdi:cash-multiple
-    show_name: true
-    slider_live_update: true
   - type: custom:bubble-card
     card_type: button
     force_icon: false
@@ -593,6 +482,89 @@ cards:
     sub_button:
       main: []
       bottom: []
+  - type: horizontal-stack
+    cards:
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: true
+        scrolling_effect: false
+        card_layout: large
+        icon: mdi:currency-eur
+        name: HP
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 32px 0 0 32px !important;
+          }
+          .bubble-icon {
+            color: #00cc00 !important;
+            opacity: 1 !important;
+            }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: number.toug_aquaair_tarif_hp
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: true
+        scrolling_effect: false
+        card_layout: large
+        icon: mdi:currency-eur
+        name: HC
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+              border-radius: 0 0 0 0 !important;
+          }
+          .bubble-icon {
+            color: #00cc00 !important;
+            opacity: 1 !important;
+            }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: number.toug_aquaair_tarif_hc
+      - type: custom:bubble-card
+        show_state: true
+        show_attribute: false
+        show_last_changed: false
+        force_icon: false
+        sub_button:
+          main: []
+          bottom: []
+        show_icon: true
+        scrolling_effect: true
+        card_layout: large
+        icon: mdi:hazard-lights
+        name: Reset kWh
+        button_type: state
+        styles: |-
+          .bubble-button-card-container {
+            border-radius: 0 32px 32px 0 !important;
+          }
+          .bubble-icon {
+            color: #ff0000 !important;
+            opacity: 1 !important;
+            }
+        attribute: friendly_name
+        show_name: true
+        card_type: button
+        entity: button.toug_aquaair_reset_consommation
+    grid_options:
+      columns: 12
+      rows: 1
   - type: custom:bubble-card
     card_type: separator
     name: Diagnostic T.One AquaAir
