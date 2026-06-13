@@ -20,31 +20,32 @@ Contient les 5 vues suivantes :
 
 - Configuration T.One - contrôles Chauffage et Climatisation
 
-<img width="2136" height="3200" alt="Screenshot_2026-06-10-12-49-34-741_io homeassistant companion android" src="https://github.com/user-attachments/assets/c75006e9-9d8d-4933-9b6a-e71cedff29e6" />
+<img width="2136" height="3200" alt="Screenshot_2026-06-13-12-11-06-800_io homeassistant companion android" src="https://github.com/user-attachments/assets/98a5bf55-699d-4cf2-ae96-b1a18f4cf396" />
 
 
 
 - Configuration et contôles ECS
 
-<img width="2136" height="3200" alt="Screenshot_2026-06-10-12-49-46-451_io homeassistant companion android" src="https://github.com/user-attachments/assets/121c8a9d-a75d-46a3-afb2-342fe8e0e7d6" />
+<img width="2136" height="3200" alt="Screenshot_2026-06-13-12-11-21-510_io homeassistant companion android" src="https://github.com/user-attachments/assets/5f782d44-19e3-4fa6-9dff-8e42b5b5fa1a" />
 
 
 
 - Températures extérieures - Thermostats
 
-<img width="2136" height="3200" alt="Screenshot_2026-06-10-12-49-56-629_io homeassistant companion android" src="https://github.com/user-attachments/assets/f88d3ce4-f22a-47bb-a292-3ea03c216087" />
+<img width="2136" height="3200" alt="Screenshot_2026-06-13-12-11-29-196_io homeassistant companion android" src="https://github.com/user-attachments/assets/baddbec4-50bf-47e8-a1a5-8cd6debbcca6" />
 
 
   
 - Programmation horaire chauffage climatisation
 
-<img width="2136" height="3200" alt="Screenshot_2026-06-10-12-50-07-220_io homeassistant companion android" src="https://github.com/user-attachments/assets/0ca22dfd-6499-4b02-a514-4ac148e04cdf" />
+<img width="2136" height="3200" alt="Screenshot_2026-06-13-12-11-37-401_io homeassistant companion android" src="https://github.com/user-attachments/assets/57a671f6-7604-469e-b221-75d35d31b550" />
+
 
 
 
 - Consommations et coûts
 
-<img width="2136" height="3200" alt="Screenshot_2026-06-10-12-50-16-040_io homeassistant companion android" src="https://github.com/user-attachments/assets/e333260e-2f50-4bd5-bc30-06d7d90ffb84" />
+<img width="2136" height="3200" alt="Screenshot_2026-06-13-12-11-45-744_io homeassistant companion android" src="https://github.com/user-attachments/assets/b7416eaa-deda-4380-bc79-915d010f6186" />
 
 
 
