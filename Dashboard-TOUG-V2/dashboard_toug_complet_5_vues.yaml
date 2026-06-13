@@ -383,7 +383,7 @@ views:
             show_state: true
             show_last_changed: false
             icon: mdi:calendar
-            name: Fin vacances
+            name: Début vacances
             grid_options:
               columns: 6
               rows: 1
@@ -392,7 +392,7 @@ views:
                 color: #00cc00 !important;
                 opacity: 1 !important;
                 }
-            entity: datetime.toug_aquaair_vacances_fin
+            entity: datetime.toug_aquaair_vacances_debut
             scrolling_effect: true
             sub_button:
               main: []
@@ -412,7 +412,7 @@ views:
             show_state: true
             show_last_changed: false
             icon: mdi:calendar
-            name: Début vacances
+            name: Fin vacances
             grid_options:
               columns: 6
               rows: 1
@@ -421,7 +421,7 @@ views:
                 color: #00cc00 !important;
                 opacity: 1 !important;
                 }
-            entity: datetime.toug_aquaair_vacances_debut
+            entity: datetime.toug_aquaair_vacances_fin
             scrolling_effect: true
             sub_button:
               main: []
