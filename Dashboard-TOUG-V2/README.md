@@ -28,7 +28,8 @@ Ici on voit bien que les chambres ont dépassé la température de consigne (26�
 
 - Configuration et contôles ECS
 
-<img width="2136" height="3200" alt="Screenshot_2026-06-13-12-11-21-510_io homeassistant companion android" src="https://github.com/user-attachments/assets/5f782d44-19e3-4fa6-9dff-8e42b5b5fa1a" />
+<img width="2136" height="3200" alt="Screenshot_2026-06-14-12-21-05-342_io homeassistant companion android 1" src="https://github.com/user-attachments/assets/e5b01566-e753-465c-bdab-27e56dbf69fa" />
+
 
 
 
@@ -44,11 +45,9 @@ Ici on voit bien que les chambres ont dépassé la température de consigne (26�
 
 
 
-
 - Consommations et coûts
 
-<img width="2136" height="3200" alt="Screenshot_2026-06-13-12-11-45-744_io homeassistant companion android" src="https://github.com/user-attachments/assets/b7416eaa-deda-4380-bc79-915d010f6186" />
-
+<img width="2136" height="3200" alt="Screenshot_2026-06-14-19-18-41-597_io homeassistant companion android" src="https://github.com/user-attachments/assets/7e404679-a5f9-4774-83f9-138a5e81950a" />
 
 
 
