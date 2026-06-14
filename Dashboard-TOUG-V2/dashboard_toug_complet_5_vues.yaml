@@ -22973,7 +22973,7 @@ views:
                 attribute: friendly_name
                 show_name: true
                 card_type: button
-                entity: sensor.toug_aquaair_conso_eau_chaude
+                entity: sensor.salon_toug_aquaair_ecs_kwh_annuel
               - type: custom:bubble-card
                 show_state: true
                 show_attribute: false
